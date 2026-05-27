@@ -1,34 +1,39 @@
-<h2>Edit Student</h2>
+<div class="card m-3">
 
-<p *ngIf="error">{{ error }}</p>
-<p *ngIf="success">Updated successfully ✔</p>
+  <h2 class="card-header">Edit Student</h2>
+  
+  <p *ngIf="error">{{ error }}</p>
+  <p *ngIf="success">Updated successfully ✔</p>
+  
+  <form (ngSubmit)="onSubmit()" class="d-flex justify-content-between">
+    <div>
 
-<form (ngSubmit)="onSubmit()">
-
-  <input
-    type="text"
-    [(ngModel)]="student.firstName"
-    name="firstName"
-    placeholder="First name"
-    required
-  >
-
-  <input
-    type="text"
-    [(ngModel)]="student.lastName"
-    name="lastName"
-    placeholder="Last name"
-    required
-  >
-
-  <input
-    type="email"
-    [(ngModel)]="student.email"
-    name="email"
-    placeholder="Email"
-    required
-  >
-
-  <button type="submit">Save</button>
-
-</form>
+      <input
+      type="text"
+      [(ngModel)]="student.firstName"
+      name="firstName"
+      placeholder="First name"
+      required
+      >
+      
+      <input
+      type="text"
+      [(ngModel)]="student.lastName"
+      name="lastName"
+      placeholder="Last name"
+      required
+      >
+      
+      <input
+      type="email"
+      [(ngModel)]="student.email"
+      name="email"
+      placeholder="Email"
+      required
+      >
+    </div>
+    
+    <button class="bg-primary text-white" type="submit">Save</button>
+    
+  </form>
+</div>
