@@ -1,0 +1,39 @@
+<div class="card m-3"> 
+
+  <h2 class="card-header">Students List</h2>
+  
+  <p routerLink="/create" style="margin: 20px 0; padding: 10px; background-color: lightblue; width: fit-content; cursor: pointer; border-radius: 10px;" >
+    <a style="color: blue" >
+      + Create Student
+    </a>
+  </p>
+  
+  <p *ngIf="error">{{ error }}</p>
+  
+  <table class="MuiTable-root">
+    <tbody class="MuiTableBody-root">
+      
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Actions</th>
+      </tr>
+      
+      <tr *ngFor="let s of students">
+        <td>{{ s.firstName }}</td>
+        <td>{{ s.lastName }}</td>
+        <td>{{ s.email }}</td>
+        
+        <td>
+          <a [routerLink]="['/student', s.id]">View</a>
+          |
+          <a [routerLink]="['/student', s.id,'edit']">Edit</a>
+          |
+          <a [routerLink]="['/student', s.id, 'delete']">Delete</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

@@ -1,0 +1,32 @@
+<div class="card m-3">
+	
+  <h2 class="card-header">Login</h2>
+
+  <form (ngSubmit)="onSubmit()" >
+
+    <input
+      type="text"
+      placeholder="Login"
+      [(ngModel)]="login"
+      name="login"
+      required
+    />
+
+    <input
+      type="password"
+      placeholder="Password"
+      [(ngModel)]="password"
+      name="password"
+      required
+    />
+
+    <button type="submit" [disabled]="loading">
+      {{ loading ? 'Loading...' : 'Login' }}
+    </button>
+
+  </form>
+
+  <p *ngIf="error" style="color:red">{{ error }}</p>
+  <p *ngIf="success" style="color:green">Login success!</p>
+
+</div>

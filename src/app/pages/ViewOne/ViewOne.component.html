@@ -1,0 +1,13 @@
+<div class="card m-3">
+
+  <h2>Student Details</h2>
+  
+  <p *ngIf="error">{{ error }}</p>
+  
+  <div *ngIf="student">
+    <p>First Name: {{ student.firstName }}</p>
+    <p>Last Name: {{ student.lastName }}</p>
+    <p>Email: {{ student.email }}</p>
+  </div>
+
+</div>
